@@ -1,5 +1,8 @@
-$bg-color-coral: lightcoral;
+@use 'variables' as v;
+@use 'importer';
+
+
 
 body {
-    background-color: $bg-color-coral;
+    background-color: v.$color_blue;
 }
