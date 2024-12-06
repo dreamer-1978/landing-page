@@ -6,7 +6,10 @@
 .header {
   width: 100%;
   height: 50px;
-  background-color: color.adjust(v.$color_white, $alpha: -0.85);
+  // background-color: color.adjust(v.$color_white, $alpha: -0.40);
+  background-color: v.$color_white;
+  opacity: 0.7;
+  
   border: {
     bottom: {
       width: 1px;
@@ -25,14 +28,14 @@
   &__title {
     height: 100%;
     width: 255px;
-    border-right: 1px solid v.$color_white;
+    border-right: 1px solid v.$color_blue-dark;
     @include m.d-flex(center, center);
   }
 
   &__title-link {
     font-size: 25px;
     font-weight: 500;
-    color: v.$color_white;
+    color: v.$color_blue-dark;
     transition: color 0.5s;
 
     span {
@@ -49,8 +52,8 @@
   }
 
   &__links-list {
-    @include m.d-flex(start, center, nowrap, row, 100px, 0);
-    padding: 0 0 0 100px;
+    @include m.d-flex(start, center, nowrap, row, min(100px, 5vw), 0);
+    padding: 0 0 0 min(100px, 5vw);
   }
 
   &__covid-wrapper {
@@ -58,6 +61,14 @@
 
   &__globe-wrapper {
   }
+
+  @media(max-width: v.$media_lg){
+    &__links-list {
+      @include m.d-flex(center, center, nowrap, row, min(100px, 5vw), 0);
+      padding: 0 0 0 0;
+    }
+  }
+
 }
 .list {
   &__item {
@@ -66,7 +77,7 @@
   &__item-link {
     font-size: 22px;
     font-weight: 400;
-    color: v.$color_white;
+    color: v.$color_blue-dark;
     transition: color 0.5s;
 
     &:hover {
@@ -77,14 +88,14 @@
 .covid {
   height: 100%;
   padding: 0 30px;
-  border-left: 1px solid v.$color_white;
-  border-right: 1px solid v.$color_white;
+  border-left: 1px solid v.$color_blue-dark;
+  border-right: 1px solid v.$color_blue-dark;
   @include m.d-flex(center, center);
 
   &__link {
     font-size: 16px;
     font-weight: 700;
-    color: v.$color_white;
+    color: v.$color_blue-dark;
     transition: color 0.5s;
 
     &:hover {
@@ -96,13 +107,11 @@
   width: 90px;
   @include m.d-flex(center, center);
 
-  &__link {
-    
-  }
+ 
   &__link-icon {
     width: 27px;
     height: 28px;
-    fill: v.$color_white;;
+    fill: black;
     transition: fill 0.5s;
 
     &:hover {
