@@ -1,8 +1,9 @@
 @use 'variables' as v;
 @use 'importer';
+@use 'placeholders';
 
 
 
 body {
-    background-color: v.$color_blue;
+    background-color: v.$bg_color;
 }
